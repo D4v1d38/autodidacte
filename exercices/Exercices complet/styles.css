@@ -1,0 +1,36 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.box{
+    position: relative;
+    padding: 5px;
+    min-height: 100px;
+    background-color: cornflowerblue;
+    margin-bottom: 5px;
+}
+
+#theme{
+    display: none;
+}
+
+
+.block-is-visible{
+    display: block !important;
+}
+
+.theme-rouge{
+    background-color: crimson;
+    border: 2px solid red;
+}
+.theme-vert{
+    background-color: green;
+    border: 2px solid greenyellow;
+}
+
+.theme-jaune{
+    background-color: yellow;
+    border: 2px solid orange;
+}

@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding:0;
+}
+
+.box{
+    width:50%;
+    line-height: 50px;;
+    margin:auto;
+    border: 2px solid black;
+    text-align: center;
+    background-color: cadetblue;
+}
+
+#btn2{
+    display: none;
+}
+.show-box, .show-box2{
+    display:none;
+    width:50%;
+    height:50px;
+    margin:auto;
+    background-color: cornflowerblue;
+}
+.toggle-block{
+    display:block !important;
+}
+.toggle-inline-block{
+    display: inline-block !important;
+}
+

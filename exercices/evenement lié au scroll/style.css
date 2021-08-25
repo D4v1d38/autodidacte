@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    padding-top: 60px ;
+}
+
+/*=== MENU ===*/
+
+nav{
+    position: fixed;
+   width : 100%;
+   height:60px;
+   top: 0;
+ }
+nav ul{
+    display: flex;
+    justify-content: space-around; 
+    text-decoration: none;
+}
+
+nav li {
+    list-style-type: none;
+}
+
+nav a{
+    display: block;
+    color: black;
+    padding: 15px;
+    text-decoration: none;
+}
+
+
+/*lecture*/
+.lecture{
+    position: fixed;
+    background-color: blue;
+    height: 3px;
+    z-index: 10;
+}
