@@ -1,0 +1,107 @@
+*{
+    margin : 0;
+    padding : 0;
+    box-sizing: border-box;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;   
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    background : url(assets/back.jpg) center/cover ;
+    height: 100vh;
+}
+
+.box-generator{
+    height:250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    max-width: 600px;
+    background: #1d037aab;
+    border: 3px inset purple;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px black;
+}
+
+.box-display{
+    width: 100%; 
+    padding: 10px;
+    border-radius: 7px 7px 0px 0px;
+    background: blueviolet;
+}
+
+#displayPassword{
+    width: 100%;
+    font-weight: bold;
+    text-align:center;
+    background: transparent;
+    border: none;
+    outline: none;  
+}
+#displayPassword:focus{
+    border:0px transparent !important; 
+}
+
+#passwordLength{
+    width: 50px;
+    text-align: center;
+    background:transparent;
+    border: none;
+    color:white;
+}
+
+.box-checkbox{
+    width: 70%;
+    display: flex;
+    justify-content: space-around;  
+}
+
+input[type="checkbox"]{
+    display: none;  
+}
+
+input[type="checkbox"] + label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(238, 94, 238);
+    width:55px;
+    height:55px;
+    border-radius: 10px;
+    user-select: none;  
+    transition: 0.3s ease; 
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked + label{
+    transform: scale(0.85);
+    border:3px inset rgb(7, 124, 75);
+  filter: brightness(150%);
+}
+
+input[type="button"]{
+    padding: 10px;
+    border-radius: 50px;
+    margin-bottom: 20px;
+    border: 2px inset purple;
+    background:rgb(190, 153, 190);
+    box-shadow: 5px 5px 10px black;
+    cursor:pointer;
+    transition: 0.3s;
+}
+
+input[type="button"]:hover{
+    background:rgb(252, 85, 196); 
+}
+
+input[type="button"]:active{
+    box-shadow: none;
+    border: 2px outset purple;
+}
+
