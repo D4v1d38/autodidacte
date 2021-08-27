@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire avec icones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form class="user-contact">
+        <div class="input-container">
+            <label for="user-mail">Votre nom</label>
+            <div class="input-group">
+                <input id="user-mail" type="email" placeholder="email">
+                <ion-icon name="mail-outline"></ion-icon>
+            </div>
+        </div>
+
+        <div class="input-container">
+            <label for="user-password">Votre mot de passe</label>
+            <div class="input-group">
+                <input id="user-password" type="email" placeholder="mot de passe">
+                <ion-icon name="key-outline"></ion-icon>
+            </div>
+        </div>
+
+        <button type="button">Valider</button>
+    </form>
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

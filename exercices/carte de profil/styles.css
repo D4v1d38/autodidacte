@@ -16,7 +16,7 @@ body{
     position :relative;
     background:#FFF;
     width: 350px;
-    height: 115px;
+    height:100px;
     border:1px solid black;
     box-shadow: 0px 50px 50px rgba(0,0,0,0.2);
     padding:10px;
