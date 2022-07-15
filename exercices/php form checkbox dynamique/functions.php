@@ -30,3 +30,14 @@ function radio(string $name, string $value, array $data):string{
     return
     '<input type="radio" name="'.$name.'" value="'.$value.'" '. $chekAttr .' />';
 }
+
+function navMenu(string $link, string $name):string{
+    $classe = 'nav-link';
+    $racineDossier = '/php form checkbox dynamique/';
+
+    if($_SERVER['SCRIPT_NAME'] === $racineDossier.$link){
+        $classe .= ' active';
+    }
+
+    return '<a class="'.$classe.'" href="'.$racineDossier.$link.'">'.$name.'</a>';
+}

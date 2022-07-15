@@ -60,66 +60,85 @@ if(isset($_GET['mon_supplement'])){
 
 
 <!--HTML-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <title>Exercie PHP</title>
+</head>
+<body>
 
-<!-- Formulaire-->
-<form action="" method="GET">
-    
-    <div>
-        <?php foreach($parfums as $parfum => $prix): ?>
-           <?= checkboxCheked("parfum", $parfum , $_GET) ?>
-           <?='<label for="">'.$parfum.' - '.$prix .'€ </label>' ?>
-        <?php endforeach; ?>
-    </div>
-    
-    <div>
-        <?php foreach($contenants as $contenant => $prix): ?>
-        <?=radio("contenant",$contenant, $_GET)?>
-        <label><?=$contenant.' - '.$prix.' €' ?></label>
-        <?php endforeach; ?>
-    </div>
-    
-    <div>
-        <?php foreach($supplements as $supp => $prix): ?>
-        <?= checkboxCheked('mon_supplement', $supp, $_GET ); ?>
-        <?= '<label>'. $supp .' - '. $prix .' € </label>' ?>
+    <!-- intégration du menu  -->
+    <?php require "menu.php" ?>
+
+    <!-- Formulaire-->
+    <form action="" method="GET">
+        
+        <div>
+            <?php foreach($parfums as $parfum => $prix): ?>
+            <?= checkboxCheked("parfum", $parfum , $_GET) ?>
+            <?='<label for="">'.$parfum.' - '.$prix .'€ </label>' ?>
+            <?php endforeach; ?>
+        </div>
+        
+        <div>
+            <?php foreach($contenants as $contenant => $prix): ?>
+            <?=radio("contenant",$contenant, $_GET)?>
+            <label><?=$contenant.' - '.$prix.' €' ?></label>
+            <?php endforeach; ?>
+        </div>
+        
+        <div>
+            <?php foreach($supplements as $supp => $prix): ?>
+            <?= checkboxCheked('mon_supplement', $supp, $_GET ); ?>
+            <?= '<label>'. $supp .' - '. $prix .' € </label>' ?>
+            <?php endforeach;?>
+        </div>
+
+        
+        <input type="submit" name="Valider"/>
+    </form>
+
+    <!-- Synthese commandes-->
+
+
+    <p>Vos parfums :</p>
+
+    <?php if($mesIngredients):?>
+    <ul>
+        <?php foreach($mesIngredients as $choix) :?>
+        <li><?= htmlspecialchars($choix) ?></li>
         <?php endforeach;?>
-    </div>
+    </ul>
+    <?php elseif(!$mesIngredients): ?>
+        <p>Veuillez faire votre choix</p>
+    <?php endif; ?>
 
+    <p>Votre contenant :</p>
+    <p> <?= htmlspecialchars($monContenant) ?> </p>
+
+
+    <p>Vos supplements :</p>
+    <?php if($mesSupplements):?>
+    <ul>
+        <?php foreach($mesSupplements as $choix) :?>
+        <li><?= htmlspecialchars($choix) ?></li>
+        <?php endforeach;?>
+    </ul>
+    <?php elseif(!$mesSupplements): ?>
+        <p>pas de suppléments choisis</p>
+    <?php endif; ?>
+
+
+
+    <p>Montant total :</p>
+   <strong><?= htmlspecialchars($prixTotal) .' €' ?></strong>
     
-    <input type="submit" name="Valider"/>
-</form>
-
-<!-- Synthese commandes-->
+</body>
+</html>
 
 
-<p>Vos parfums :</p>
-
-<?php if($mesIngredients):?>
-<ul>
-    <?php foreach($mesIngredients as $choix) :?>
-    <li><?= htmlspecialchars($choix) ?></li>
-    <?php endforeach;?>
-</ul>
-<?php elseif(!$mesIngredients): ?>
-    <p>Veuillez faire votre choix</p>
-<?php endif; ?>
-
-<p>Votre contenant :</p>
-<p> <?= htmlspecialchars($monContenant) ?> </p>
-
-
-
-<?php if($mesSupplements):?>
-<ul>
-    <?php foreach($mesSupplements as $choix) :?>
-    <li><?= htmlspecialchars($choix) ?></li>
-    <?php endforeach;?>
-</ul>
-<?php elseif(!$mesSupplements): ?>
-    <p>pas de suppléments choisis</p>
-<?php endif; ?>
-
-
-
-<p>Montant total :</p>
-<strong><?= htmlspecialchars($prixTotal) ?></strong>
