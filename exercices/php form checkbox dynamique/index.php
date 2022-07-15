@@ -136,7 +136,7 @@ if(isset($_GET['mon_supplement'])){
 
 
     <p>Montant total :</p>
-   <strong><?= htmlspecialchars($prixTotal) .' €' ?></strong>
+    <strong><?= htmlspecialchars($prixTotal) .' €' ?></strong>
     
 </body>
 </html>
