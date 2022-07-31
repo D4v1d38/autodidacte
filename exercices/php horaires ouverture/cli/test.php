@@ -17,7 +17,7 @@ var_dump(dirname($monAutreFichier));
 var_dump(dirname(dirname($monAutreFichier)));
 var_dump(dirname(dirname(dirname($monAutreFichier))));
 var_dump(dirname($monAutreFichier,3));
-exit();
+
 file_put_contents(
     $monAutreFichier,  //chemin
     "Je suis un texte ", //données a écrire
@@ -30,3 +30,5 @@ file_put_contents(
 );
 // file_get_contents();//permet de lire  un fichier
 
+$lecture = file_get_contents('monAutreFichier.txt');
+var_dump($lecture);

@@ -61,4 +61,11 @@ var_dump(dirname($monAutreFichier,3)); //depuis php 7 , il est possible de mettr
 Lire dans un fichier :
 ========================
 */ 
-// file_get_contents();//permet de lire  un fichier
+file_get_contents();//permet de lire  un fichier
+
+$lecture = file_get_contents('monAutreFichier.txt');
+var_dump($lecture);
+
+// ce qui donne : string(21) "Je suis un texte test"
+
+
