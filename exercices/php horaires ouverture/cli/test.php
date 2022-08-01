@@ -32,3 +32,45 @@ file_put_contents(
 
 $lecture = file_get_contents('monAutreFichier.txt');
 var_dump($lecture);
+
+$monGrosFichier = __DIR__.DIRECTORY_SEPARATOR.'demo.csv';
+/*
+$monGrosFichierALire = fopen($monGrosFichier,'r'); //on creer une ressource et on la stock dans une variable
+
+echo fread($monGrosFichierALire, 6); // on lit les 6 premiers octets de la ressource
+
+echo fgets($monGrosFichierALire);// lis la 1ere ligne et place le curseur a la fin de cette ligne
+echo fgets($monGrosFichierALire);// lis la 2e ligne et place le curseur a la fin de cette ligne
+echo fgets($monGrosFichierALire);// lis la 3e ligne et place le curseur a la fin de cette ligne
+
+*/
+// pour lire une ligne en paticulier => il faut faire une boucle
+//exemple nous voulons lire la 4ieme ligne de notre fichier
+
+$maRessource = fopen($monGrosFichier,'r'); // on ouvre une ressource
+$k=0;
+
+while($ligne = fgets($maRessource)){   //on assigne dans la condition de la boucle sinon fgets ne deplacera pas le curseur
+    $k++;
+
+    if($k == 4){
+        var_dump($ligne);
+        break;
+    } 
+}
+fclose($maRessource); // on ferme la ressource
+
+
+// Ecriture dans une ligne du fichier
+$maRessource = fopen($monGrosFichier,'r+'); // on ouvre une ressource
+$k=0;
+
+while($ligne = fgets($maRessource)){   //on assigne dans la condition de la boucle sinon fgets ne deplacera pas le curseur
+    $k++;
+
+    if($k == 1){
+        fwrite($maRessource, 'ajout');
+        break;
+    } 
+}
+fclose($maRessource); // on ferme la ressource
