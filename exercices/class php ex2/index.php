@@ -6,7 +6,6 @@ require "./classe/Eleve.class.php";
 use \classe\Utilisateur;
 use \classe\Eleve;
 
-
 $user = new Utilisateur('sam','Lecasse',25);
 echo $user->getPrenom();
 echo $user->getnom();
@@ -25,7 +24,3 @@ echo $bart->getNiveau();
 $bart->setPrenom('Lisa');
 echo $bart->getPrenom();
 echo $bart->bonjour('bart');
-
-
-
-

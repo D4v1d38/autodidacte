@@ -16,7 +16,7 @@ class Eleve extends Utilisateur
         return '<p>'.$this->niveau.'</p>';
     }
 
-    public function setNiveau($newNiveau){
+    public function setNiveau(string $newNiveau):void{
         $this->niveau = $newNiveau;
     }
     
