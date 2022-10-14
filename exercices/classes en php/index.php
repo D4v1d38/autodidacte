@@ -1,10 +1,24 @@
 <?php
+require "./traits/Exemple.php";
+Require './classes/Personnes.php';
+Require './classes/Eleve.php';
 
-require 'classes/Personnes.php';
-require 'classes/Eleve.php';
 
-$prof = new Personnes('toto','truc',37);
-$prof->presentation();
 
-$eleve = new Eleve('bart','simpson',10,"cm2");
-$eleve->presentationEleve();
+$bart = new Eleve('Bart','Simpson',10,'cm2');
+
+$bart->presentation();
+
+$bart->setNom('Flander');
+
+echo $bart->getNom();
+
+$bart->presentation();
+
+echo $bart->getClasse();
+
+$bart->setClasse('6e');
+
+echo $bart->getClasse();
+
+echo $bart->direPrenom("bart");

@@ -1,19 +1,18 @@
 <?php
 
-class Personnes{
+abstract class Personnes{
     protected $nom;
     protected $prenom;
     protected $age;
 
-    public function __construct($nom,$prenom,$age){
-        $this->nom = $nom;
-        $this->prenom = $prenom;
-        $this->age = $age;
+
+    abstract public function presentation();
+    
+    public function setNom($newName){
+        $this->nom = $newName;
     }
 
-    public function presentation(){
-        echo $this->nom.' '.$this->prenom.' age : '.$this->age;
-        }
-
-    
+    public function getNom(){
+        return $this->nom;
+    }
 }

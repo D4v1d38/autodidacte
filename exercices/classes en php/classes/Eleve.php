@@ -1,22 +1,28 @@
 <?php
 
+class Eleve extends Personnes {
+    use traits\Exemple;
+    private $classe;
 
-class Eleve extends Personnes{
-
-    private string $niveau = " niveau non renseigné";
-
-    public function __construct(string $nom,string $prenom,int $age,string $niveau){
-        parent ::__construct($nom, $prenom, $age);
-
-        $this->setNiveau($niveau);
+    public function __construct($p,$n,$a,$c){
+        $this->nom = $n;
+        $this->prenom = $p;
+        $this->age = $a;
+        $this->classe = $c;
+    }
+    
+    public function presentation(){
+        echo "<p>bonjour je suis ".$this->prenom.' '.$this->nom.' est j\'ai '.$this->age.' ans en classe de :'.$this->classe .'</p>'; 
     }
 
-    public function presentationEleve():void{
-        echo $this->nom.' '.$this->prenom.' age : '.$this->age.' en classe de : '.$this->niveau;
+    public function setClasse($newClasse){
+        
+        $this->classe = $newClasse;
     }
 
-    public function setNiveau($niveau){
-
+    public function getClasse(){
+        return $this->classe;
     }
+
 
 }
