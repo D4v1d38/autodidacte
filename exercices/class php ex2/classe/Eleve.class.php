@@ -5,6 +5,7 @@ namespace classe;
 class Eleve extends Utilisateur
 {
     use \traits\Presentation;
+    use \traits\SecureData;
     private $niveau;
     
     public function __construct($prenom,$nom,$age,$niveau){
